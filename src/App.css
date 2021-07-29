@@ -1,7 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;  
+}
+
+body {
+  margin: 0 10px;
+  
+}
+
+.title {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.posts {  
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
 .post {
-  border: 1px solid #000;
+  border: 1px solid #000;  
+  max-width: 300px;
+  padding: 5px;
+  position: relative;
 }
 
 .post__image {
-  max-width: 300px;
+  width: 100%;
 }
+

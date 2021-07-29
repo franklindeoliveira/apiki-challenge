@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Link } from "react-router-dom";
 
 function App() {
 
@@ -32,16 +33,20 @@ function App() {
 
   return (
     <>
-    <h1>Página Inicial</h1>
+    <h1 className="title">Postagens do blog com a categoria Desenvolvimento</h1>
+
+    <section className="posts">
     { posts.map((post) => {
       return (
         <div className="post">
           <img className="post__image" src={post.image} alt="" />
           <p className="post__title">{post.title}</p>
-          <a className="post__link" href={post.link}>Acessar post</a>
+          <Link className="post__link" to={post.link}>Acessar post</Link>
         </div>
       )
-    }) }
+    }) }      
+    </section>
+    <button className="load-more">Carregar mais ...</button>
     </>
   );
 }
