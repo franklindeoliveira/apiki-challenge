@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import './Post.css';
 
 function Post(props: any) {
     const { post_url } = props.match.params;
@@ -22,7 +23,7 @@ function Post(props: any) {
         <div className="post2">
             <img className="post__image2" src={post.image} alt="" />
             <h1 className="post__title2">{post.title}</h1>
-            <p className="post__link2" dangerouslySetInnerHTML={{ __html: post.content }} />
+            <p className="post__content" dangerouslySetInnerHTML={{ __html: post.content }} />
         </div>
     );
 }

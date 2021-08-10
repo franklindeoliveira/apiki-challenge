@@ -32,3 +32,16 @@ body {
   width: 100%;
 }
 
+.load-more {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.load-more__button {
+  height: 50px;
+  width: 200px;
+}
+
+.invisible {
+  display: none;
+}
