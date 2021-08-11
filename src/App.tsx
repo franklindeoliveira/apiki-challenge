@@ -68,7 +68,8 @@ function App() {
 
     <section className="posts">
     { posts.map((post) => {
-      return (
+       
+      return post.title == '' || (
         <div className="post">
           <img className="post__image" src={post.image} alt="" />
           <p className="post__title">{post.title}</p>
@@ -78,7 +79,7 @@ function App() {
     }) }
     </section>
     <section className="load-more">
-      <button onClick={handleLoadMorePosts} className={`load-more__button ${visible}`}>Carregar mais ... {visible}</button>
+      <button onClick={handleLoadMorePosts} className={`load-more__button ${visible}`}>Carregar mais ...</button>
     </section>
     
     </>

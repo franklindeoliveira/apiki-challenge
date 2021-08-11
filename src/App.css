@@ -22,14 +22,22 @@ body {
 }
 
 .post {
-  border: 1px solid #000;  
+  border: 1px solid #d7d7d7;  
   max-width: 300px;
-  padding: 5px;
+  padding: 10px;
   position: relative;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px #ddd;
 }
 
 .post__image {
   width: 100%;
+}
+
+.post__title {
+  margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 .load-more {
@@ -38,10 +46,15 @@ body {
 }
 
 .load-more__button {
+  border-radius: 5px;
   height: 50px;
   width: 200px;
+  background-color: #fff;
+  border: none;
+  box-shadow: 1px 1px 1px 0px #c5c5c5;
 }
 
 .invisible {
   display: none;
 }
+
