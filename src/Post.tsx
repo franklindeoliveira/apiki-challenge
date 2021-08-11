@@ -21,12 +21,12 @@ function Post(props: any) {
 
     return (
         <>
-        <div className="post2_img">
-            <img className="post__image2" src={post.image} alt="" />
-            <h1 className="post__title2">{post.title}</h1>
+        <div className="post-destaque">
+            <img className="post-destaque__image" src={post.image} alt="" />
+            <h1 className="post-destaque__title">{post.title}</h1>
         </div>
-        <div className="post2_content">
-            <p className="post__content" dangerouslySetInnerHTML={{ __html: post.content }} />
+        <div className="post-content">
+            <p className="post-content__html" dangerouslySetInnerHTML={{ __html: post.content }} />
         </div>
         </>
     );

@@ -8,23 +8,18 @@ function App() {
   const [ totalPosts, setTotalPosts ] = useState(0);
   const [ totalPages, setTotalPages ] = useState(0);
   const [ currentPage, setCurrentPage ] = useState(1);
-  const [visible, setVisible] = useState('invisible');
+  const [ visible, setVisible ] = useState('invisible');
 
   function handleLoadMorePosts(evt: any) {
-    console.log('handleLoadMorePosts');
-    
     if (currentPage >= totalPages) {
-      console.log('Todas as paginas carregadas.');
       return;
-    } else
-
+    }
     setCurrentPage(currentPage + 1);
   }
 
   useEffect(function() {
     fetch(`https://blog.apiki.com/wp-json/wp/v2/posts?_embed&categories=518&page=${currentPage}`)
       .then(response => {   
-        console.log(response.headers.get("X-WP-TotalPages"));
         if (parseInt(response.headers.get("X-WP-TotalPages") || '0') > 1 
          && parseInt(response.headers.get("X-WP-TotalPages") || '0') > currentPage ) {
           setVisible('visible');
@@ -33,19 +28,9 @@ function App() {
         }
         setTotalPosts(parseInt(response.headers.get("X-WP-Total") || '0'));
         setTotalPages(parseInt(response.headers.get("X-WP-TotalPages") || '0'));
-        console.log('TotalPosts: ' + totalPosts);
-        console.log('TotalPages: ' + totalPages);
-        console.log('currentPage: ' + currentPage);
         return response.json(); 
       })
       .then(json => {
-
-        console.log('TotalPosts: ' + totalPosts);
-        console.log('TotalPages: ' + totalPages);
-        console.log('currentPage: ' + currentPage);
-
-        console.log(json);
-
         let postsTemp: any = [];
         json.forEach((el: any) => {
           postsTemp.push({
@@ -54,10 +39,6 @@ function App() {
             'link': '/post/' + el.slug
           });
         });
-
-        console.log('posts: ');
-        console.log(posts);
-        console.log([{...posts, ...postsTemp}]);
         setPosts([...posts, ...postsTemp]);
       });
   }, [currentPage]);
@@ -79,7 +60,9 @@ function App() {
     }) }
     </section>
     <section className="load-more">
-      <button onClick={handleLoadMorePosts} className={`load-more__button ${visible}`}>Carregar mais ...</button>
+      <button onClick={handleLoadMorePosts} className={`load-more__button ${visible}`}>
+        Carregar mais ...
+      </button>
     </section>
     
     </>
