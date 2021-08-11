@@ -5,7 +5,7 @@
 }
 
 h1 {
-  margin: 20px 0px 10px 0px;
+  margin: 0px 0px 30px 0px;
 }
 
 h2 {
@@ -15,3 +15,22 @@ h2 {
 h3 {
   margin: 10px 0px 0px 0px;
 }
+
+.post__image2 {
+  width: 50%;
+  margin: 20px 0;
+}
+
+p {
+  margin-top: 5px;
+}
+
+.post2_img {
+  border: 1px solid #c9c9c9;
+  text-align: center;
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: #fff;
+  margin-top: 30px;
+}
+
